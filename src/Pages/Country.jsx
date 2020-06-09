@@ -5,8 +5,6 @@ import { CountryContext } from '../Context/CountryContext';
 import CountryDescription from '../Components/CountryDescription';
 import Wrapper from '../Components/Wrapper';
 
-const CountryPage = styled.section``;
-
 const Back = styled.button`
 	background-color: var(--secondary);
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -43,13 +41,11 @@ export default function Country({ match, history }) {
 	}, [match.params.id, contextCountry]);
 
 	return (
-		<CountryPage>
-			<Wrapper>
-				<Back onClick={() => history.goBack()}>
-					<i className='fas fa-long-arrow-alt-left'></i> Back
-				</Back>
-				<CountryDescription {...country} />
-			</Wrapper>
-		</CountryPage>
+		<Wrapper>
+			<Back onClick={() => history.goBack()}>
+				<i className='fas fa-long-arrow-alt-left'></i> Back
+			</Back>
+			<CountryDescription {...country} />
+		</Wrapper>
 	);
 }
