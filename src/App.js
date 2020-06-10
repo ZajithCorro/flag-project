@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { CountryProvider } from './Context/CountryContext';
 import Root from './Root';
 import Header from './Components/Header';
@@ -21,7 +21,7 @@ export default function App() {
 	return (
 		<main className={mainClass}>
 			<CountryProvider>
-				<Router>
+				<Router basename='/flag-project'>
 					<Header setDarkMode={setDarkMode} darkMode={darkMode} />
 					<Root />
 				</Router>
