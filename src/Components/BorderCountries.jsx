@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 
 const BorderCountriesStyled = styled.div`
   text-align: center;
@@ -9,6 +10,7 @@ const BorderCountriesStyled = styled.div`
     margin-top: 1em;
   }
   .country {
+    cursor: pointer;
     padding: 0.5em 2em;
     margin: 0 15px 15px 0;
     border-radius: 5px;
@@ -23,7 +25,12 @@ const BorderCountriesStyled = styled.div`
 `;
 
 export default function BorderCountries({ countries }) {
-  console.log(countries);
+  const history = useHistory();
+
+  function goTo(countryCode) {
+    history.push(`/country/${countryCode}`);
+  }
+
   return (
     <BorderCountriesStyled>
       <section>
@@ -32,7 +39,11 @@ export default function BorderCountries({ countries }) {
         </div>
         <div className='list-countries'>
           {countries.map((country) => (
-            <span className='country' key={country}>
+            <span
+              className='country'
+              key={country}
+              onClick={() => goTo(country)}
+            >
               {country}
             </span>
           ))}

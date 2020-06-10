@@ -44,12 +44,12 @@ export default function Country({
   capital,
   population,
   region,
-  alpha2Code,
+  alpha3Code,
 }) {
   const history = useHistory();
 
   function goToCountry() {
-    history.push(`/country/${alpha2Code}`);
+    history.push(`/country/${alpha3Code}`);
   }
 
   return (

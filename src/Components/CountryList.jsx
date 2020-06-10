@@ -44,7 +44,7 @@ export default function CountryList() {
             capital,
             population,
             numericCode,
-            alpha2Code,
+            alpha3Code,
             region,
           }) => {
             return (
@@ -55,7 +55,7 @@ export default function CountryList() {
                 capital={capital}
                 population={population}
                 region={region}
-                alpha2Code={alpha2Code}
+                alpha3Code={alpha3Code}
               />
             );
           }
