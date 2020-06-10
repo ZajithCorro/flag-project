@@ -1,0 +1,2 @@
+*,:after,:before{margin:0;padding:0;box-sizing:border-box}:root{--primary:#111517;--secondary:#fff;--background:#fafafa}body{font-family:"Nunito Sans",sans-serif}main{color:#111517;color:var(--primary);min-height:100vh;background:#fafafa;background:var(--background)}.is-dark-mode{--primary:#fff;--secondary:#273542;--background:#1a2833}.is-light-mode{--primary:#111517;--secondary:#fff;--background:#fafafa}
+/*# sourceMappingURL=main.268cc84d.chunk.css.map */
