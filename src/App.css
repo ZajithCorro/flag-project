@@ -21,3 +21,15 @@ main {
 	min-height: 100vh;
 	background: var(--background);
 }
+
+.is-dark-mode {
+	--primary: #fff;
+	--secondary: #273542;
+	--background: #1a2833;
+}
+
+.is-light-mode {
+	--primary: #111517;
+	--secondary: #fff;
+	--background: #fafafa;
+}
