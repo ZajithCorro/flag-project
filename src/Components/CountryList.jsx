@@ -11,12 +11,16 @@ const CountryListStyled = styled.div`
 	grid-auto-flow: columns;
 	grid-template-columns: repeat(auto-fill, 270px);
 	justify-content: center;
+	padding-bottom: 3em;
 `;
 
 export default function CountryList() {
 	const { state, setCountryList } = useContext(CountryContext);
 
-	const { countryList } = state;
+	const countryList =
+		state.countryListByName.length > 0
+			? state.countryListByName
+			: state.countryList;
 
 	useEffect(() => {
 		const fetchCountries = () => {
