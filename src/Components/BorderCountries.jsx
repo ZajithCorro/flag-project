@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const BorderCountriesStyled = styled.div`
 	text-align: center;
@@ -30,10 +30,10 @@ const BorderCountriesStyled = styled.div`
 `;
 
 export default function BorderCountries({ countries }) {
-	const history = useHistory();
+	const navigate = useNavigate();
 
 	function goTo(countryCode) {
-		history.push(`/country/${countryCode}`);
+		navigate(`/country/${countryCode}`);
 	}
 
 	return (
@@ -44,10 +44,7 @@ export default function BorderCountries({ countries }) {
 				</div>
 				<div className='list-countries'>
 					{countries.map((country) => (
-						<span
-							className='country'
-							key={country}
-							onClick={() => goTo(country)}>
+						<span className='country' key={country} onClick={() => goTo(country)}>
 							{country}
 						</span>
 					))}

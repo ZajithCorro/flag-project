@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { HashRouter as Router } from 'react-router-dom';
+
 import { CountryProvider } from './Context/CountryContext';
-import Root from './Root';
-import Header from './Components/Header';
+
+import Routes from './routes';
+
 import './App.css';
 
 export default function App() {
@@ -11,20 +12,18 @@ export default function App() {
 
 	useEffect(() => {
 		const mq = window.matchMedia('(prefers-color-scheme: dark)');
-		mq.addListener(() => setDarkMode(mq.matches));
+		mq.addEventListener('change', () => setDarkMode(mq.matches));
 		setDarkMode(mq.matches);
+
 		return () => {
-			mq.removeListener();
+			mq.removeEventListener();
 		};
 	}, []);
 
 	return (
 		<main className={mainClass}>
 			<CountryProvider>
-				<Router basename='/flag-project'>
-					<Header setDarkMode={setDarkMode} darkMode={darkMode} />
-					<Root />
-				</Router>
+				<Routes setDarkMode={setDarkMode} darkMode={darkMode} />
 			</CountryProvider>
 		</main>
 	);
