@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Wrapper from './Wrapper';
+import { ThemeContext } from '../context/ThemeContext';
 
 const HeaderStyled = styled.div`
 	background: var(--secondary);
@@ -49,20 +50,16 @@ const HeaderStyled = styled.div`
 	}
 `;
 
-export default function Header({ setDarkMode, darkMode }) {
-	function handleDarkMode() {
-		setDarkMode(!darkMode);
-	}
-
+export default function Header() {
+	const { switchTheme } = useContext(ThemeContext);
 	return (
 		<HeaderStyled>
 			<Wrapper>
-				{darkMode}
 				<header>
 					<Link to='/'>
 						<h1>Where in the world?</h1>
 					</Link>
-					<div className='dark-mode' onClick={handleDarkMode}>
+					<div className='dark-mode' onClick={switchTheme}>
 						<span>
 							<i className='far fa-moon'></i> Dark Mode
 						</span>
