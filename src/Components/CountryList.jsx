@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { CountryContext } from '../Context/CountryContext';
+import { CountryContext } from '../context/CountryContext';
 import styled from 'styled-components';
 
 import Wrapper from './Wrapper';
@@ -18,9 +18,7 @@ export default function CountryList() {
 	const { state, setCountryList } = useContext(CountryContext);
 
 	const countryList =
-		state.countryListByName.length > 0
-			? state.countryListByName
-			: state.countryList;
+		state.countryListByName.length > 0 ? state.countryListByName : state.countryList;
 
 	useEffect(() => {
 		const fetchCountries = () => {
@@ -40,29 +38,19 @@ export default function CountryList() {
 	return (
 		<Wrapper>
 			<CountryListStyled>
-				{countryList.map(
-					({
-						name,
-						flag,
-						capital,
-						population,
-						numericCode,
-						alpha3Code,
-						region,
-					}) => {
-						return (
-							<Country
-								key={numericCode}
-								name={name}
-								flag={flag}
-								capital={capital}
-								population={population}
-								region={region}
-								alpha3Code={alpha3Code}
-							/>
-						);
-					}
-				)}
+				{countryList.map(({ name, flag, capital, population, numericCode, alpha3Code, region }) => {
+					return (
+						<Country
+							key={numericCode}
+							name={name}
+							flag={flag}
+							capital={capital}
+							population={population}
+							region={region}
+							alpha3Code={alpha3Code}
+						/>
+					);
+				})}
 			</CountryListStyled>
 		</Wrapper>
 	);

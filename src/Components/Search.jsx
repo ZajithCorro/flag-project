@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CountryContext } from '../Context/CountryContext';
+import { CountryContext } from '../context/CountryContext';
 import { useState } from 'react';
 
 const SearchStyled = styled.div`

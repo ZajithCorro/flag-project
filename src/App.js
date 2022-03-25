@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-import { CountryProvider } from './Context/CountryContext';
+import { CountryProvider } from './context/CountryContext';
+import { ThemeContext } from './context/ThemeContext';
 
 import Routes from './routes';
 
