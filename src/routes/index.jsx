@@ -5,9 +5,9 @@ import Home from '../Pages/Home';
 import Country from '../Pages/Country';
 import Header from '../Components/Header';
 
-const Routes = ({ setDarkMode, darkMode }) => (
+const Routes = () => (
 	<BrowserRouter>
-		<Header setDarkMode={setDarkMode} darkMode={darkMode} />
+		<Header />
 		<Switch>
 			<Route path='/country/:id' element={<Country />} />
 			<Route path='/' element={<Home />} />

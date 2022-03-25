@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams, useNavigate } from 'react-router-dom';
-import { CountryContext } from '../Context/CountryContext';
+import { CountryContext } from '../context/CountryContext';
 
 import CountryDescription from '../Components/CountryDescription';
 import Wrapper from '../Components/Wrapper';
