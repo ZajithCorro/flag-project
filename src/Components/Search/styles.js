@@ -1,9 +1,6 @@
-import React, { useContext } from 'react';
 import styled from 'styled-components';
-import { CountryContext } from '../context/CountryContext';
-import { useState } from 'react';
 
-const SearchStyled = styled.div`
+export const SearchWrapper = styled.div`
 	display: flex;
 	position: relative;
 	width: 90%;
@@ -24,7 +21,7 @@ const SearchStyled = styled.div`
 	}
 `;
 
-const InputStyled = styled.label`
+export const Label = styled.label`
 	display: inline-flex;
 	background: var(--secondary);
 	align-items: center;
@@ -32,10 +29,12 @@ const InputStyled = styled.label`
 	padding: 0 2rem;
 	border-radius: 5px;
 	flex: 1;
+
 	i {
 		margin-right: 1em;
 		color: #c4c4c4;
 	}
+
 	input {
 		flex: 1;
 		border: none;
@@ -50,23 +49,3 @@ const InputStyled = styled.label`
 		}
 	}
 `;
-
-export default function Search() {
-	const { state, setCountryByName } = useContext(CountryContext);
-	const [value, setValue] = useState(state.inputSearch);
-
-	function handleChange(event) {
-		const country = event.target.value.trim();
-		setValue(country);
-		setCountryByName(event.target.value);
-	}
-
-	return (
-		<SearchStyled>
-			<InputStyled>
-				<i className='fas fa-search'></i>
-				<input type='text' value={value} onChange={handleChange} />
-			</InputStyled>
-		</SearchStyled>
-	);
-}
