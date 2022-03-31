@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { useParams, useNavigate } from 'react-router-dom';
 import { CountryContext } from '../context/CountryContext';
 
-import CountryDescription from '../Components/CountryDescription';
-import Wrapper from '../Components/Wrapper';
+import CountryDescription from '../components/CountryDescription';
+import Wrapper from '../components/Wrapper';
 
 const Back = styled.button`
 	background-color: var(--secondary);

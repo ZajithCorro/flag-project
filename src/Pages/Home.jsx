@@ -1,6 +1,6 @@
 import React from 'react';
-import CountryList from '../Components/CountryList';
-import Filters from '../Components/Filters';
+import CountryList from '../components/CountryList';
+import Filters from '../components/Filters';
 
 export default function Home() {
 	return (

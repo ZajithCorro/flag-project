@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes as Switch, Route } from 'react-router-dom';
 
-import Home from '../Pages/Home';
-import Country from '../Pages/Country';
-import Header from '../Components/Header';
+import Home from '../pages/Home';
+import Country from '../pages/Country';
+import Header from '../components/Header';
 
 const Routes = () => (
 	<BrowserRouter>
