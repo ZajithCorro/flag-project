@@ -26,11 +26,7 @@ function CountryProvider({ children }) {
 		setState({ ...state, countryList });
 	}
 
-	return (
-		<Provider value={{ state, setCountryList, setCountryByName }}>
-			{children}
-		</Provider>
-	);
+	return <Provider value={{ state, setCountryList, setCountryByName }}>{children}</Provider>;
 }
 
 export { CountryContext, CountryProvider };
