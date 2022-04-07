@@ -22,7 +22,7 @@ export default function CountryList() {
 
 	useEffect(() => {
 		const fetchCountries = () => {
-			fetch('https://restcountries.eu/rest/v2/all')
+			fetch('https://restcountries.com/v3.1/all')
 				.then((response) => response.json())
 				.then((data) => {
 					setCountryList(data);
@@ -38,19 +38,17 @@ export default function CountryList() {
 	return (
 		<Wrapper>
 			<CountryListStyled>
-				{countryList.map(({ name, flag, capital, population, numericCode, alpha3Code, region }) => {
-					return (
-						<Country
-							key={numericCode}
-							name={name}
-							flag={flag}
-							capital={capital}
-							population={population}
-							region={region}
-							alpha3Code={alpha3Code}
-						/>
-					);
-				})}
+				{countryList.map(({ name, flags, capital, population, cioc, region, cca3 }) => (
+					<Country
+						key={cioc}
+						name={name.common}
+						flag={flags.svg}
+						capital={capital}
+						population={population}
+						region={region}
+						alpha3Code={cca3}
+					/>
+				))}
 			</CountryListStyled>
 		</Wrapper>
 	);
