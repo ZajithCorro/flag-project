@@ -2,15 +2,16 @@ import React from 'react';
 import { BrowserRouter, Routes as Switch, Route } from 'react-router-dom';
 
 import Home from '../pages/Home';
-import Country from '../pages/Country';
+import CountryDetails from '../pages/CountryDetails';
 import Header from '../components/Header';
 
 const Routes = () => (
 	<BrowserRouter>
 		<Header />
 		<Switch>
-			<Route path='/country/:id' element={<Country />} />
+			<Route path='/country/:id' element={<CountryDetails />} />
 			<Route path='/' element={<Home />} />
+			<Route path='*' element={<Home />} />
 		</Switch>
 	</BrowserRouter>
 );

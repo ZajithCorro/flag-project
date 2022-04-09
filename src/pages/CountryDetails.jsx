@@ -20,7 +20,7 @@ const Back = styled.button`
 	}
 `;
 
-export default function Country() {
+export default function CountryDetails() {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const { state } = useContext(CountryContext);
