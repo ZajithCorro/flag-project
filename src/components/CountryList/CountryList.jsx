@@ -1,18 +1,10 @@
 import React, { useContext, useEffect } from 'react';
-import { CountryContext } from '../context/CountryContext';
-import styled from 'styled-components';
 
-import Wrapper from './Wrapper';
+import { CountryContext } from '../../context/CountryContext';
+
 import Country from './Country';
 
-const CountryListStyled = styled.div`
-	display: grid;
-	grid-gap: 2.3em 4em;
-	grid-auto-flow: columns;
-	grid-template-columns: repeat(auto-fill, 270px);
-	justify-content: center;
-	padding-bottom: 3em;
-`;
+import { CountryListGrid } from './styles';
 
 export default function CountryList() {
 	const { state, setCountryList } = useContext(CountryContext);
@@ -36,11 +28,11 @@ export default function CountryList() {
 	}, []);
 
 	return (
-		<Wrapper>
-			<CountryListStyled>
-				{countryList.map(({ name, flags, capital, population, cioc, region, cca3 }) => (
+		<div className='wrapper'>
+			<CountryListGrid>
+				{countryList.map(({ name, flags, capital, population, region, cca3 }) => (
 					<Country
-						key={cioc}
+						key={cca3}
 						name={name.common}
 						flag={flags.svg}
 						capital={capital}
@@ -49,7 +41,7 @@ export default function CountryList() {
 						alpha3Code={cca3}
 					/>
 				))}
-			</CountryListStyled>
-		</Wrapper>
+			</CountryListGrid>
+		</div>
 	);
 }
