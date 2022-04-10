@@ -7,6 +7,7 @@ import { ThemeContext } from '../../context/ThemeContext';
 
 export default function Header() {
 	const { switchTheme } = useContext(ThemeContext);
+
 	return (
 		<HeaderWrapper>
 			<div>
