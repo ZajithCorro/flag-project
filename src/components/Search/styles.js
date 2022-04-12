@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const SearchWrapper = styled.div`
 	display: flex;
-	position: relative;
 	width: 90%;
 	margin: 0 auto;
 	margin-bottom: 1.5em;

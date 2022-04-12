@@ -1,11 +1,10 @@
 import React from 'react';
-import Search from './Search';
-import Wrapper from './Wrapper';
+import Search from '../Search';
 
 export default function Filters() {
 	return (
-		<Wrapper>
+		<div className='wrapper'>
 			<Search />
-		</Wrapper>
+		</div>
 	);
 }
