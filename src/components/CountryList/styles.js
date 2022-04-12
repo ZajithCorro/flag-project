@@ -9,7 +9,7 @@ export const CountryWrapper = styled(Link)`
 	background-color: var(--secondary);
 	transition: all 0.3s ease;
 	text-decoration: none;
-	color: #ffff;
+	color: var(--primary);
 
 	&:hover {
 		transform: translatey(-0.2rem);
