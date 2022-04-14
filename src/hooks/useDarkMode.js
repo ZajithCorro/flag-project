@@ -17,5 +17,5 @@ export const useDarkMode = () => {
 		setDarkMode(!darkMode);
 	};
 
-	return [mainClass, switchDarkMode];
+	return [darkMode, mainClass, switchDarkMode];
 };
