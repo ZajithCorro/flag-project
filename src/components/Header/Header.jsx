@@ -5,8 +5,10 @@ import { HeaderWrapper } from './styles';
 
 import { ThemeContext } from '../../context/ThemeContext';
 
+import Mode from './Mode';
+
 export default function Header() {
-	const { switchTheme } = useContext(ThemeContext);
+	const { darkMode, switchTheme } = useContext(ThemeContext);
 
 	return (
 		<HeaderWrapper>
@@ -15,9 +17,7 @@ export default function Header() {
 					<h1>Where in the world?</h1>
 				</Link>
 				<div className='dark-mode' onClick={switchTheme}>
-					<span>
-						<i className='far fa-moon'></i> Dark Mode
-					</span>
+					<Mode isDarkMode={darkMode} />
 				</div>
 			</div>
 		</HeaderWrapper>
