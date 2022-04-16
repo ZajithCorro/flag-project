@@ -16,7 +16,7 @@ function CountryProvider({ children }) {
 		const { countryList } = state;
 
 		const countryListByName = countryList.filter((country) =>
-			country.name.toLowerCase().includes(countryName.toLowerCase())
+			country.name.common.toLowerCase().includes(countryName.toLowerCase())
 		);
 
 		setState({ ...state, countryListByName, inputSearch: countryName });
