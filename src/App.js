@@ -1,18 +1,22 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { CountryProvider } from './context/CountryContext';
-import { ThemeContext } from './context/ThemeContext';
 
 import Routes from './routes';
+import Header from './components/Header';
 
 import './App.css';
 
 export default function App() {
 	return (
-		<main>
-			<CountryProvider>
-				<Routes />
-			</CountryProvider>
-		</main>
+		<BrowserRouter>
+			<Header />
+			<main>
+				<CountryProvider>
+					<Routes />
+				</CountryProvider>
+			</main>
+		</BrowserRouter>
 	);
 }
