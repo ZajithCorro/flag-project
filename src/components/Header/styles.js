@@ -30,6 +30,9 @@ export const HeaderWrapper = styled.header`
 			cursor: pointer;
 			font-size: 12px;
 			font-weight: 600;
+			background: transparent;
+			border: none;
+			color: var(--primary);
 
 			i {
 				transform: rotate(-20deg);

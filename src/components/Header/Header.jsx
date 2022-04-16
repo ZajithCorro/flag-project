@@ -16,9 +16,9 @@ export default function Header() {
 				<Link to='/'>
 					<h1>Where in the world?</h1>
 				</Link>
-				<div className='dark-mode' onClick={switchTheme}>
+				<button className='dark-mode' onClick={switchTheme}>
 					<Mode isDarkMode={darkMode} />
-				</div>
+				</button>
 			</div>
 		</HeaderWrapper>
 	);

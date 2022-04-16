@@ -8,10 +8,8 @@ import Routes from './routes';
 import './App.css';
 
 export default function App() {
-	const { themeClass } = useContext(ThemeContext);
-
 	return (
-		<main className={themeClass}>
+		<main>
 			<CountryProvider>
 				<Routes />
 			</CountryProvider>

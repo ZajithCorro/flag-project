@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useEffect } from 'react';
 
 import { useDarkMode } from '../hooks/useDarkMode';
 
@@ -6,9 +6,14 @@ const ThemeContext = createContext();
 const { Provider } = ThemeContext;
 
 function ThemeProvider({ children }) {
-	const [darkMode, themeClass, switchTheme] = useDarkMode();
+	const [darkMode, switchTheme] = useDarkMode();
 
-	return <Provider value={{ darkMode, themeClass, switchTheme }}>{children}</Provider>;
+	useEffect(() => {
+		const html = document.querySelector('html');
+		html.classList.toggle('dark', darkMode);
+	}, [darkMode]);
+
+	return <Provider value={{ darkMode, switchTheme }}>{children}</Provider>;
 }
 
 export { ThemeProvider, ThemeContext };
