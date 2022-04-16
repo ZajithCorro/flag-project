@@ -23,7 +23,7 @@ export const HeaderWrapper = styled.header`
 
 		a {
 			text-decoration: none;
-			color: var(--dark);
+			color: var(--primary);
 		}
 
 		.dark-mode {
