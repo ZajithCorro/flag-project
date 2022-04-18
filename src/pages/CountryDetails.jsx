@@ -8,11 +8,11 @@ import Wrapper from '../components/Wrapper';
 import Button from '../components/Button';
 
 export default function CountryDetails() {
-	const { id } = useParams();
+	const { code } = useParams();
 	const navigate = useNavigate();
 	const { state } = useContext(CountryContext);
 
-	const contextCountry = state.countryList.find((item) => item.alpha3Code === id);
+	const contextCountry = state.countryList.find((item) => item.cca3 === code);
 
 	const [country, setCountry] = useState(contextCountry);
 
@@ -20,9 +20,9 @@ export default function CountryDetails() {
 		window.scrollTo(0, 0);
 
 		async function fetchCountry() {
-			const response = await fetch(`https://restcountries.eu/rest/v2/alpha/${id}`);
+			const response = await fetch(`https://restcountries.com/v3.1/alpha/${code}`);
 			const data = await response.json();
-			setCountry(data);
+			setCountry(data[0]);
 		}
 
 		if (contextCountry) {
@@ -30,7 +30,7 @@ export default function CountryDetails() {
 		} else {
 			fetchCountry();
 		}
-	}, [id]);
+	}, [code]);
 
 	return (
 		<Wrapper>
