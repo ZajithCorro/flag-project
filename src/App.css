@@ -19,7 +19,6 @@ body {
 
 main {
 	color: var(--primary);
-	min-height: 100vh;
 	background: var(--background);
 }
 
