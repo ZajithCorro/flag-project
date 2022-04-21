@@ -10,10 +10,17 @@ export const BorderCountryWrapper = styled.div`
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.75rem;
+		justify-content: center;
+		margin-bottom: 1rem;
 	}
 
 	@media screen and (min-width: 900px) {
 		text-align: left;
+
+		.list-countries {
+			margin-bottom: 0;
+			justify-content: flex-start;
+		}
 	}
 `;
 
