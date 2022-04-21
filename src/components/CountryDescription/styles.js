@@ -1,21 +1,23 @@
 import styled from 'styled-components';
 
 export const CountryDescriptionWrapper = styled.div`
-	margin-top: 2em;
-	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	margin-top: 2rem;
 
 	img {
 		width: 100%;
-		margin-bottom: 2em;
 		border-radius: 10px;
-		width: 600px;
-		height: 400px;
+		max-width: 600px;
+		max-height: 400px;
 		object-fit: cover;
 	}
 
 	.details {
 		display: flex;
 		flex-direction: column;
+		text-align: center;
 		justify-content: space-around;
 
 		h1 {
@@ -33,15 +35,16 @@ export const CountryDescriptionWrapper = styled.div`
 	}
 
 	@media screen and (min-width: 900px) {
-		display: grid;
 		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 3rem;
-		margin-top: 2em;
-		text-align: left;
+		gap: 3rem;
 		margin-bottom: 1rem;
 
 		img {
 			margin-bottom: 0;
+		}
+
+		.details {
+			text-align: left;
 		}
 
 		.grid {
