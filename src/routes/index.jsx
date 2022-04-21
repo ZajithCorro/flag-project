@@ -6,7 +6,7 @@ import CountryDetails from '../pages/CountryDetails';
 
 const Routes = () => (
 	<Switch>
-		<Route path='/country/:id' element={<CountryDetails />} />
+		<Route path='/country/:code' element={<CountryDetails />} />
 		<Route path='/' element={<Home />} />
 		<Route path='*' element={<Home />} />
 	</Switch>
