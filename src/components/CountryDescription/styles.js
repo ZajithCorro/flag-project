@@ -8,6 +8,9 @@ export const CountryDescriptionWrapper = styled.div`
 		width: 100%;
 		margin-bottom: 2em;
 		border-radius: 10px;
+		width: 600px;
+		height: 400px;
+		object-fit: cover;
 	}
 
 	.details {
