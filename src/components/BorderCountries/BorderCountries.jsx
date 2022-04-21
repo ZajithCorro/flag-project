@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { BorderCountryWrapper } from './styles';
+import { BorderCountryWrapper, Country } from './styles';
 
 export default function BorderCountries({ countries }) {
 	const navigate = useNavigate();
@@ -18,9 +18,9 @@ export default function BorderCountries({ countries }) {
 				</div>
 				<div className='list-countries'>
 					{countries.map((country) => (
-						<span className='country' key={country} onClick={() => goTo(country)}>
+						<Country key={country} to={`/country/${country}`}>
 							{country}
-						</span>
+						</Country>
 					))}
 				</div>
 			</section>

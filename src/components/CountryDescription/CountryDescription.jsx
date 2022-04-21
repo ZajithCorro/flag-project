@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BorderCountry from '../BorderCountry';
+import BorderCountries from '../BorderCountries';
 import { CountryDescriptionWrapper } from './styles';
 
 export default function CountryDescription({
@@ -45,7 +45,7 @@ export default function CountryDescription({
 					</section>
 				</div>
 
-				{borders.length > 0 ? <BorderCountry countries={borders} /> : ''}
+				{borders.length > 0 ? <BorderCountries countries={borders} /> : ''}
 			</div>
 		</CountryDescriptionWrapper>
 	);
