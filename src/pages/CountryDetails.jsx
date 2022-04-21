@@ -35,7 +35,7 @@ export default function CountryDetails() {
 	return (
 		<Wrapper>
 			<Button onClick={() => navigate('/')}>
-				<i className='fas fa-long-arrow-alt-left'></i> Back
+				<i className='fas fa-long-arrow-alt-left'></i> Back to the list
 			</Button>
 			<CountryDescription {...country} />
 		</Wrapper>
